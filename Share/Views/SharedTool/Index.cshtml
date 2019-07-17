@@ -1,0 +1,57 @@
+﻿@model IEnumerable<Share.DAL.Tool>
+
+@{
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <p>
+
+        @Html.ActionLink(Resources.SharedResources.createNew, "Create")
+        <br />
+        @Model.Count() أدوات متوفرة للمشاركة<br />
+
+    </p>
+
+
+    @foreach (var item in Model)
+    {
+        <div class="col-md-6" style=" text-align:center;">
+            <div class="row">
+                <div class="col-md-12">
+                    <img src="@item.image_url" />
+                </div>
+                <h2>
+                    @Html.DisplayFor(modelItem => item.name)
+                </h2>
+                <p>
+                    @Html.DisplayFor(modelItem => item.description)
+                </p>
+                <h3> @Html.DisplayFor(modelItem => item.quantity)</h3>
+                @*@if (item.Quantity == 0)
+                {
+                    <text>انتظر حتى يتم إعادة هذه الإداة</text>
+                }
+                else if (item.Quantity == 1)
+                {
+                    <text>سارع بالطلب إن كنت بحاجة إليها</text>
+                }*@
+
+
+                @Html.ActionLink("Request", "RequestTool", new { })
+
+                @*@Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+                    @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+                    @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })*@
+            </div>
+        </div>
+    }
+
+</body>
+</html>

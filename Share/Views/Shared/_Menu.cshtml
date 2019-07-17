@@ -1,0 +1,23 @@
+﻿
+<div class="navbar navbar-inverse navbar-fixed-top"  >
+        <div class="container" >
+            <div class="navbar-header" style="float:right;">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                @Html.ActionLink(Resources.SharedResources.share, "Index", "SharedTool", new { area = "" }, new { @class = "navbar-brand" })
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav" style="float:right;">
+                    <li style="float:right;">@Html.ActionLink(Resources.SharedResources.home, "Index", "SharedTool")</li>
+                    <li style="float:right;">@Html.ActionLink(Resources.SharedResources.about, "About", "Home")</li>
+                    <li style="float:right;">@Html.ActionLink(Resources.SharedResources.contact, "Contact", "Home")</li>
+                </ul>
+                @Html.Partial("_LoginPartial")
+
+
+            </div>
+        </div>
+    </div>
