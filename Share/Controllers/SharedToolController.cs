@@ -51,7 +51,7 @@ namespace Share.Controllers
 
         [Authorize]
         [HttpPost]
-        public ActionResult Create(SharedTool sharedTool)
+        public ActionResult Create(SharedTool sharedTool, HttpPostedFileBase file)
         {
             if (ModelState.IsValid)
             {
@@ -66,10 +66,22 @@ namespace Share.Controllers
                 tool.description = toolDescription;
                 tool.quantity = quantity;
 
-                return RedirectToAction("Index");
+                if (file != null)
+                {
+                   
+                    String imageFileName = System.IO.Path.GetFileName(file.FileName);
+                    String path = System.IO.Path.Combine(Server.MapPath("~/Images"), imageFileName);
+                    file.SaveAs(path);
+                    tool.image_url = "/Images/" + imageFileName;
+                    toolRepository.Add(tool);
+
+                    // /Images/imageName.jpg
+                    // C://Users/admin/Share/Image/tv.jpg
+
+                    return RedirectToAction("Index");
+                }
             }
-            else 
-                return View(sharedTool);
+            return View(sharedTool);
         }
         public ActionResult RequestTool()
         {
