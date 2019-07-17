@@ -168,4 +168,7 @@
   <data name="RegisterSubTitle" xml:space="preserve">
     <value>أنشىء حساباً جديداً</value>
   </data>
+  <data name="Request" xml:space="preserve">
+    <value>طلب</value>
+  </data>
 </root>

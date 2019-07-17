@@ -168,4 +168,7 @@
   <data name="RegisterSubTitle" xml:space="preserve">
     <value>Create a new account.</value>
   </data>
+  <data name="Request" xml:space="preserve">
+    <value>Request</value>
+  </data>
 </root>

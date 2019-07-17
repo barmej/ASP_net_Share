@@ -82,6 +82,7 @@
           <Property Name="date" Type="datetime" />
           <Property Name="tool_id" Type="int" />
           <Property Name="user_id" Type="int" />
+          <Property Name="approved" Type="bit" Nullable="false" />
         </EntityType>
         <EntityType Name="sysdiagrams">
           <Key>
@@ -313,6 +314,7 @@ warning 6013: The table/view 'ShareDB.dbo.viewUsersBorrowedTools' does not have 
           <Property Name="user_id" Type="Int32" />
           <NavigationProperty Name="Tool" Relationship="Self.FK_BorrowedTool_Tool" FromRole="BorrowedTool" ToRole="Tool" />
           <NavigationProperty Name="User" Relationship="ShareDBModel.FK_BorrowedTool_User" FromRole="BorrowedTool" ToRole="User" />
+          <Property Name="approved" Type="Boolean" Nullable="false" />
         </EntityType>
         <EntityType Name="sysdiagram">
           <Key>
@@ -585,6 +587,7 @@ warning 6013: The table/view 'ShareDB.dbo.viewUsersBorrowedTools' does not have 
           <EntitySetMapping Name="BorrowedTools">
             <EntityTypeMapping TypeName="ShareDBModel.BorrowedTool">
               <MappingFragment StoreEntitySet="BorrowedTool">
+                <ScalarProperty Name="approved" ColumnName="approved" />
                 <ScalarProperty Name="id" ColumnName="id" />
                 <ScalarProperty Name="date" ColumnName="date" />
                 <ScalarProperty Name="tool_id" ColumnName="tool_id" />

@@ -18,6 +18,7 @@ namespace Share.DAL
         public Nullable<System.DateTime> date { get; set; }
         public Nullable<int> tool_id { get; set; }
         public Nullable<int> user_id { get; set; }
+        public bool approved { get; set; }
     
         public virtual Tool Tool { get; set; }
         public virtual User User { get; set; }

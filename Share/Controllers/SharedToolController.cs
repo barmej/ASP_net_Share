@@ -1,4 +1,5 @@
-﻿using Share.Business;
+﻿using Microsoft.AspNet.Identity;
+using Share.Business;
 using Share.DAL;
 using Share.Models;
 using System;
@@ -83,9 +84,21 @@ namespace Share.Controllers
             }
             return View(sharedTool);
         }
-        public ActionResult RequestTool()
+
+        [Authorize]
+        public ActionResult RequestTool(int id)
         {
-            return Content("");
+            BorrowedToolRepository borrowRepo = new BorrowedToolRepository();
+            BorrowedTool borrowedTool = new BorrowedTool();
+            String userid = User.Identity.GetUserId();
+            UserRepository userRepo = new UserRepository();
+            User shareUser = userRepo.GetUserByUserId(userid);
+            borrowedTool.user_id = shareUser.id;
+            borrowedTool.tool_id = id;
+            borrowedTool.date = DateTime.Now;
+
+            borrowRepo.Add(borrowedTool);
+            return Content("تم إرسال الطلب بنجاح");
         }
     }
 }
