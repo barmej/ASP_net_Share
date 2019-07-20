@@ -1,0 +1,60 @@
+﻿@model IEnumerable<Share.DAL.BorrowedTool>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>طلبات استعارة الأدوات</h2>
+
+
+<div class="alert-success">
+    @TempData["SuccessMessage"]
+</div>
+<div class="alert-danger">
+    @TempData["ErrorMessage"]
+</div>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.date)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.approved)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Tool.name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.User.name)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.date)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.approved)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Tool.name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.User.name)
+        </td>
+        <td>
+            @if (item.approved)
+            {
+                <p>Approved</p>
+            }
+            else
+            {
+                @Html.ActionLink("Approve", "Approve", new { id = item.id })
+            }
+        </td>
+    </tr>
+}
+
+</table>

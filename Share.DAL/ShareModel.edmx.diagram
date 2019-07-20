@@ -5,22 +5,22 @@
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
       <Diagram DiagramId="3e61fb3efe3a4bccb653946320aa9a0e" Name="Diagram1">
-        <EntityTypeShape EntityType="ShareDBModel.Address" Width="1.5" PointX="3" PointY="4" IsExpanded="true" />
-        <EntityTypeShape EntityType="ShareDBModel.BorrowedTool" Width="1.5" PointX="3" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="ShareDBModel.sysdiagram" Width="1.5" PointX="5.75" PointY="2.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="ShareDBModel.Tool" Width="1.5" PointX="0.75" PointY="6.75" IsExpanded="true" />
-        <AssociationConnector Association="ShareDBModel.FK_BorrowedTool_Tool" ManuallyRouted="false" />
-        <EntityTypeShape EntityType="ShareDBModel.C__MigrationHistory" Width="1.5" PointX="8.375" PointY="0.75" />
-        <EntityTypeShape EntityType="ShareDBModel.AspNetRole" Width="1.5" PointX="5.375" PointY="7.5" />
-        <EntityTypeShape EntityType="ShareDBModel.AspNetUserClaim" Width="1.5" PointX="9.875" PointY="8.625" />
-        <EntityTypeShape EntityType="ShareDBModel.AspNetUserLogin" Width="1.5" PointX="9.875" PointY="6" />
-        <EntityTypeShape EntityType="ShareDBModel.AspNetUser" Width="1.5" PointX="7.625" PointY="6.375" />
+        <EntityTypeShape EntityType="ShareDBModel.C__MigrationHistory" Width="1.5" PointX="5.75" PointY="6.75" />
+        <EntityTypeShape EntityType="ShareDBModel.Address" Width="1.5" PointX="3" PointY="11.75" />
+        <EntityTypeShape EntityType="ShareDBModel.AspNetRole" Width="1.5" PointX="0.75" PointY="2.5" />
+        <EntityTypeShape EntityType="ShareDBModel.AspNetUserClaim" Width="1.5" PointX="5.25" PointY="3.625" />
+        <EntityTypeShape EntityType="ShareDBModel.AspNetUserLogin" Width="1.5" PointX="5.25" PointY="1" />
+        <EntityTypeShape EntityType="ShareDBModel.AspNetUser" Width="1.5" PointX="3" PointY="1.375" />
+        <EntityTypeShape EntityType="ShareDBModel.BorrowedTool" Width="1.5" PointX="3" PointY="8.375" />
+        <EntityTypeShape EntityType="ShareDBModel.sysdiagram" Width="1.5" PointX="7.75" PointY="0.75" />
+        <EntityTypeShape EntityType="ShareDBModel.Tool" Width="1.5" PointX="0.75" PointY="12.375" />
+        <EntityTypeShape EntityType="ShareDBModel.User" Width="1.5" PointX="0.75" PointY="8.375" />
+        <AssociationConnector Association="ShareDBModel.FK_Address_User" />
         <AssociationConnector Association="ShareDBModel.FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId" />
         <AssociationConnector Association="ShareDBModel.FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId" />
-        <AssociationConnector Association="ShareDBModel.AspNetUserRoles" />
-        <EntityTypeShape EntityType="ShareDBModel.User" Width="1.5" PointX="0.75" PointY="2.125" />
-        <AssociationConnector Association="ShareDBModel.FK_Address_User" />
+        <AssociationConnector Association="ShareDBModel.FK_BorrowedTool_Tool" />
         <AssociationConnector Association="ShareDBModel.FK_BorrowedTool_User" />
+        <AssociationConnector Association="ShareDBModel.AspNetUserRoles" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
